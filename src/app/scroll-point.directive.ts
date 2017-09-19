@@ -6,22 +6,26 @@ import {DOCUMENT} from '@angular/common';
 })
 export class ScrollPointDirective {
   @Input() appScrollPoint: number;
-  @ViewChild('section1') section1;
   constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2, private el: ElementRef) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const windowScroll = this.document.documentElement.scrollTop;
+    const windowScroll = window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
     console.log(windowScroll);
-    if (windowScroll > this.appScrollPoint) {
-      console.log('reached here');
-      // add class to the native element
-      console.log(this.el);
-      console.log(this.section1);
-      this.renderer.setAttribute(this.el.nativeElement, 'flag', 'hi');
+    if (windowScroll > 0 && windowScroll < 476) {
+      this.document.getElementById('first').classList.add('active');
     } else {
-      // remove class from native element
-      this.renderer.addClass(this.el.nativeElement, 'acti');
+      this.document.getElementById('first').classList.remove('active');
+    }
+    if (windowScroll > 477 && windowScroll < 954) {
+      this.document.getElementById('second').classList.add('active');
+    } else {
+      this.document.getElementById('second').classList.remove('active');
+    }
+    if (windowScroll > 955 && windowScroll < 1484) {
+      this.document.getElementById('third').classList.add('active');
+    } else {
+      this.document.getElementById('third').classList.remove('active');
     }
   }
 }

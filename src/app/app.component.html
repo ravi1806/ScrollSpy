@@ -6,13 +6,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" [class.active] = 'section1.getAttribute(flag) === "hi"'>Section 1</a>
+        <li class="nav-item" id="first">
+          <a class="nav-link">Section 1</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" #section2>Section 2</a>
+        <li class="nav-item" id="second">
+          <a class="nav-link">Section 2</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="third">
           <a class="nav-link" href="#section3">Section 3</a>
         </li>
         <li class="nav-item dropdown">
@@ -28,22 +28,22 @@
     </div>
   </nav>
 
-  <div id="section1" class="container-fluid" [appScrollPoint]="250" #section1>
+  <div id="section1" class="container-fluid" [appScrollPoint]= "'sec1'" #section1>
     <h1>Section 1</h1>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   </div>
-  <div id="section2" class="container-fluid" [appScrollPoint]="335">
+  <div id="section2" class="container-fluid" [appScrollPoint]= "'sec2'">
     <h1>Section 2</h1>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   </div>
-  <div id="section3" class="container-fluid" [appScrollPoint]="235">
+  <div id="section3" class="container-fluid" [appScrollPoint]= "'sec3'">
     <h1>Section 3</h1>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   </div>
-  <div id="section41" class="container-fluid" [appScrollPoint]="245">
+  <div id="section41" class="container-fluid" [appScrollPoint]="sec4">
     <h1>Section 4 Submenu 1</h1>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
     <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
